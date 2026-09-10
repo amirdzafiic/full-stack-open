@@ -1,18 +1,19 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-
 const Header = (props) => {
   return <h1>{props.course}</h1>
+}
+
+const Part = (props) => {
+  return (
+    <p>{props.part} {props.exercises}</p>
+  )
 }
 
 const Content = (props) => {
   return (
     <div>
-      <p>{props.part1} {props.exercises1}</p>
-      <p>{props.part2} {props.exercises2}</p>
-      <p>{props.part3} {props.exercises3}</p>
+      <Part part={props.part1} exercises={props.exercises1} />
+      <Part part={props.part2} exercises={props.exercises2} />
+      <Part part={props.part3} exercises={props.exercises3} />
     </div>
   )
 } 
@@ -30,7 +31,7 @@ const App = () => {
   const part2 = 'Using props to pass data'
   const exercises2 = 7
   const part3 = 'State of a component'
-  const exercises3 = 142
+  const exercises3 = 14
 
   return (
     <div>
