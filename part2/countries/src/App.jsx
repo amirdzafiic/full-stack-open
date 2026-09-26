@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import Weather from './components/Weather'
 
 const App = () => {
   const [countries, setCountries] = useState([])
@@ -27,7 +28,7 @@ const App = () => {
         <div>
           {filteredCountries.map(country => (
             <div key={country.name.common}>
-              {country.name.common} <button onClick={() => setSearch(country.name.common)}>Show</button> <br />
+              {country.name.common} <button onClick={() => setSearch(country.name.common)}>Show</button>
             </div>
           ))}
         </div>
@@ -37,7 +38,7 @@ const App = () => {
           <h1>{filteredCountries[0].name.common}</h1>
           <div>
             Capital: {filteredCountries[0].capital}<br />
-            Population: {filteredCountries[0].population}
+            Area: {filteredCountries[0].area}
           </div>
           <h2>Languages</h2>
           <ul>
@@ -46,6 +47,8 @@ const App = () => {
             ))}
           </ul>
           <img src={filteredCountries[0].flags.png} alt={`Flag of ${filteredCountries[0].name.common}`} />
+
+          <Weather capital={filteredCountries[0].capital} />
         </div>
       ) : null}
     </div>
