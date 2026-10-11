@@ -1,0 +1,11 @@
+### Dodaj novu osobu
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{
+  "name": "Test Osoba",
+  "number": "123-456789"
+}
+
+### Provjeri da je dodata (treba da bude 5 osoba)
+GET http://localhost:3001/api/persons
