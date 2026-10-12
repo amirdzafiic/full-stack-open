@@ -9,3 +9,12 @@ Content-Type: application/json
 
 ### Provjeri da je dodata (treba da bude 5 osoba)
 GET http://localhost:3001/api/persons
+
+### Ovo treba da padne sa 400 - ime vec postoji
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{
+  "name": "Arto Hellas",
+  "number": "000-000"
+}
